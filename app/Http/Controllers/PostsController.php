@@ -18,10 +18,6 @@ class PostsController extends Controller
 
     public function show($var)
     {
-        /* return view("posts.show", [  ------> este es una forma
-            "var" => $var
-        ]); */
-
         return view("posts.show", compact("var")); /* -------> esta es la segunda forma en la cual se le puede mandar un parametro mediante una lista */
     }
 }
