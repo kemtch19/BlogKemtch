@@ -11,7 +11,8 @@
             break;
 
         case 'success':
-            $class = 'text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400';
+            $class =
+                'text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400'; /* Este componente solo se le llama componente anonimo que no procede de ninguna clase */
             break;
 
         case 'warning':
@@ -24,7 +25,9 @@
     }
 @endphp
 
-<div class="p-4 mb-4 text-sm rounded-lg {{ $class }}" role="alert">
+<div {{ $attributes->merge(['class' => 'p4 text-sm rounded-lg' . $class]) }} role="alert">
     <span class="font-medium">base de todo ahora --> {{ $variable ?? 'no introduciste nada pa' }} </span> -->
-    {{ $slot }}
+    {{ $slot }} y la segunda var --> {{ $VarTwo ?? 'no envio nada marica' }}
 </div>
+
+<p> {{ $attributes }} </p>
