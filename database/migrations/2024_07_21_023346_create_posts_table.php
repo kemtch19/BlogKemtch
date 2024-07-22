@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string("Title");
             $table->longText("Content");                      /* algo a tener en cuenta y es que si tu creaste tablas manualmente desde phpmyadmin o con algún gestor para la administración de bases de datos es mejor utilizar el comando migrate:refresh porque no se va a borrar todas las tablas creadas sino simplemente las migraciones */
             $table->string("categories");
+            $table->timestamp("published_at");
+            $table->boolean("is_active")->default(true); /* 1=true 0=false */
             $table->timestamps();
         });
     }
