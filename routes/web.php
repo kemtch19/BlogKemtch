@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get("/home", homecontroller::class);
 
-Route::get("/posts", [PostsController::class, "hola"]);
+Route::get("/posts", [PostsController::class, "index"]); /* Esta ruta me administrara que cuando apretenemos en la url blog.test/posts me muestre la vista referente a este y todo esto pasa primero por el controlador el cual luego se encarga de hacer la lógica para esa vista y que luego se muestre */
 
 Route::get("/posts/create", [PostsController::class, "create"]);
 

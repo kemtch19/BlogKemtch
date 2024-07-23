@@ -15,7 +15,7 @@
 <body>
     <h1 class="text-primary">title from my web page of laravel</h1>
 
-    <x-alerta2 type="success" class="mb-5"> 
+    <x-alerta2 type="success" class="mb-5">
         <x-slot name="variable" class="mb-4">
             saludos desde una etiqueta slot
         </x-slot>

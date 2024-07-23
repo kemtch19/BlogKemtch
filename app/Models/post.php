@@ -17,9 +17,18 @@ class post extends Model
         2. importar el use Atribute desde illuminate para que nos devuelva una instancia de esa clase attribute
     */
 
+    protected $fillable = [
+        'title',
+        'content',
+        'categories',
+        'is_active'
+    ];
+
     protected function casts(): array /* hay que tener mucho cuidado con el nombre de los métodos debido a que el nombre de los métodos pertenecen a un campo de la tabla o a un método que podemos utilizar como es en este caso que lo llame cast y no dio pero lo llamte casts y funciono porque así se llama el método como tal */
     {
         return [
+            'title' => "string",
+            'content' => "string",
             "published_at" => "datetime", /* lo que nos indica es que el campo published_at tratalo como una fecha */
             "is_active" => "boolean"
         ];

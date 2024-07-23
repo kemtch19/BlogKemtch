@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function hola()
+    public function index()
     {
-        return view("Posts.hola");
+        $Post=post::orderBy("id", "asc")->paginate(5); /* en esta variable se metera todo el listado del modelo post o todos los campos pues que tenga la tabla */
+        // return $Post;
+        return view("Posts.index", compact("Post"));
     }
 
     public function create()
